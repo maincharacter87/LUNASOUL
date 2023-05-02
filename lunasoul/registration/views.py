@@ -4,6 +4,23 @@ from django.contrib.auth.models import User
 
 
 def register(request):
+    """
+    Registers a new user account and logs them in.
+
+    If the request method is POST, the function retrieves the username, password,
+    and first name from the request data and uses them to create a new User object.
+    The user is then authenticated and logged in before being redirected to the 'shop'
+    page. If the request method is GET, the function renders the 'register.html' template.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: A rendered HTTP response if the request method is GET, or a
+        redirect response to the 'shop' page if the request method is POST and the
+        registration was successful.
+
+    """
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -24,6 +41,25 @@ def register(request):
 
 
 def login_view(request):
+    """
+    Authenticates a user and logs them in.
+
+    If the request method is POST, the function retrieves the username and password
+    from the request data and attempts to authenticate the user. If the authentication
+    is successful, the user is logged in and redirected to the 'shop' page. If the
+    authentication fails, the function renders the 'login.html' template with an error
+    message. If the request method is GET, the function simply renders the 'login.html'
+    template.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: A rendered HTTP response if the request method is GET or the
+        authentication fails, or a redirect response to the 'shop' page if the
+        authentication is successful.
+
+    """
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
