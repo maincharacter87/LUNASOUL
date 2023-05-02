@@ -41,6 +41,25 @@ def register(request):
 
 
 def login_view(request):
+    """
+    Authenticates a user and logs them in.
+
+    If the request method is POST, the function retrieves the username and password
+    from the request data and attempts to authenticate the user. If the authentication
+    is successful, the user is logged in and redirected to the 'shop' page. If the
+    authentication fails, the function renders the 'login.html' template with an error
+    message. If the request method is GET, the function simply renders the 'login.html'
+    template.
+
+    Args:
+        request (HttpRequest): The HTTP request object.
+
+    Returns:
+        HttpResponse: A rendered HTTP response if the request method is GET or the
+        authentication fails, or a redirect response to the 'shop' page if the
+        authentication is successful.
+
+    """
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
