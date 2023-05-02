@@ -26,4 +26,4 @@ urlpatterns = [
     path('', include('base.urls')),
     path('registration/', include('registration.urls')),
     path('merch/', include('merch.urls'))
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] #+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
