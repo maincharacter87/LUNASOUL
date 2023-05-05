@@ -33,3 +33,12 @@ Replace your_secret_key_here with a secret key of your choice.
 **python manage.py runserver**
 10. The server will start running at http://localhost:8000/. You can open this URL in your web browser to see the website.
 
+## Credits
+This project was built using a combination of various technologies to create a visually appealing and functional website. I would like to give credit to the following technologies:  
+* Google Fonts - A library of open-source fonts that can be used on the web to enhance the website's visual appeal.  
+* CSS (Cascading Style Sheets) - A language used for describing the presentation of a website, including its layout, colors, and fonts.  
+* Bootstrap - A popular front-end framework for building responsive and mobile-first websites. It provides a range of CSS and JavaScript components and tools for developing modern and clean-looking interfaces.  
+* SQLite - A lightweight and file-based relational database management system that we used to store data for this project.  
+* HTML (Hypertext Markup Language) - A standard markup language used to create web pages and applications.  
+* Python - A popular and versatile programming language that we used for developing the backend of the website.
+
