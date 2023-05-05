@@ -1,11 +1,23 @@
-FROM python:3.10-slim-buster
+FROM python:3.9-slim-buster
 
+# Set the working directory to /app
 WORKDIR /app
 
-COPY requirements.txt requirements.txt
+# Copy the requirements file into the container
+COPY requirements.txt .
 
-RUN pip3 install -r requirements.txt
+# Install dependencies
+RUN pip install -r requirements.txt
 
+# Copy the rest of the application code into the container
 COPY . .
 
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000" ]
+# Set environment variables
+ENV DJANGO_SETTINGS_MODULE=lunasoul.settings
+ENV PYTHONUNBUFFERED=1
+
+# Expose port 8000
+# EXPOSE 8000
+
+# Run the command to start the server
+CMD ["python", "manage.py", "runserver"]
